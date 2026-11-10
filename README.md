@@ -2,11 +2,23 @@
 
 Students get a reminder to restart once their Mac has been on for 7 days. They can postpone 3 times, 4 hours apart. After that, the Mac warns them and restarts after 10 minutes.
 
+## Try the demo (no install, never restarts)
+1. Download **Restart-Reminder-Demo.zip** from the [latest release](https://github.com/Geekshere/mac-restart/releases/latest) and unzip it.
+2. Double-click **Restart-Reminder-Demo.command**.
+   - The first time, macOS may say it "can't be opened" because it's from the internet. Right-click the file → **Open** → **Open**. On newer macOS, go to System Settings → Privacy & Security → **Open Anyway**.
+3. Click through the reminders. The whole flow takes about a minute.
+
+Or run it from Terminal:
+```bash
+curl -fsSL https://raw.githubusercontent.com/Geekshere/mac-restart/main/demo/Restart-Reminder-Demo.command -o /tmp/rr-demo.command && bash /tmp/rr-demo.command
+```
+
 ## Files
 | File | Purpose |
 |---|---|
 | `install-restart-reminder.sh` | Upload to your MDM and run as root. Safe to re-run to change settings. |
 | `uninstall-restart-reminder.sh` | Removes everything. |
+| `demo/Restart-Reminder-Demo.command` | Double-click demo. Installs nothing and never restarts. |
 
 ## Settings (top of the installer, or Jamf parameters 4–8)
 | Setting | Default | Jamf param |
